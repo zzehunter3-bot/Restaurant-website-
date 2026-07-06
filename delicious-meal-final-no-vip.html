@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delicious Meal USA | Fast Food Houston TX</title>
+<meta name="description" content="Delicious Meal USA - Best Burgers, Fries & Shakes in Houston. Fast Delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#ff1a1a;
+  --red-dark:#d41212;
+  --yellow:#ffcc00;
+  --black:#111;
+  --gray:#f6f5f2;
+  --muted:#6b7280;
+  --border:#ececec;
+  --white:#fff;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:var(--black);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:0;background:none}
+.container{width:min(1160px,92%);margin-inline:auto}
+
+/* HEADER */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}
+.logo-mark{
+  width:38px;height:38px;background:var(--black);color:var(--yellow);
+  display:grid;place-items:center;border-radius:10px;font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;
+}
+.logo span b{color:var(--red)}
+.nav-links{display:flex;gap:28px;font-weight:600;font-size:14px;letter-spacing:.02em}
+.nav-links a{opacity:.75} .nav-links a:hover{opacity:1;color:var(--red)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;transition:.2s;white-space:nowrap;
+}
+.btn-black{background:var(--black);color:#fff}.btn-black:hover{transform:translateY(-1px)}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-dark);transform:translateY(-1px)}
+.btn-yellow{background:var(--yellow);color:var(--black)}.btn-yellow:hover{filter:brightness(.98);transform:translateY(-1px)}
+.btn-outline{border:1.5px solid var(--black);background:#fff}
+.btn-sm{padding:10px 14px;font-size:13px}
+.cart-btn{position:relative;border:1px solid var(--border);background:#fff;padding:11px 14px 11px 38px;border-radius:999px;font-weight:700}
+.cart-btn::before{
+  content:"";position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  width:20px;height:20px;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'%3E%3Cpath d='M6 6h15l-1.5 9h-13z'/%3E%3Cpath d='M6 6L5 2H2'/%3E%3Ccircle cx='9' cy='20' r='1.5'/%3E%3Ccircle cx='18' cy='20' r='1.5'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.cart-count{background:#ffcc00!important;color:#111!important;border:1.5px solid #111;
+  position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 5px;
+  background:var(--yellow);color:#111;border-radius:999px;border:1.5px solid #111;font-size:11px;display:grid;place-items:center;font-weight:800;
+}
+.hamburger{display:none;width:42px;height:42px;border:1px solid var(--border);border-radius:10px;place-items:center}
+
+/* HERO */
+.hero{
+  background:radial-gradient(900px 420px at 85% 10%, rgba(255,204,0,.28), transparent 60%),
+             radial-gradient(700px 380px at 10% 20%, rgba(255,26,26,.14), transparent 60%),
+             #fff;
+  padding:28px 0 46px;border-bottom:1px solid var(--border);
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+.eyebrow{
+  display:inline-flex;gap:8px;align-items:center;
+  background:var(--black);color:var(--yellow);padding:7px 12px;border-radius:999px;
+  font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+}
+.hero h1{
+  font-family:'Bebas Neue';font-size:clamp(56px,9vw,92px);line-height:.9;letter-spacing:1px;margin:18px 0 14px;
+}
+.hero h1 i{font-style:normal;color:var(--red);text-shadow:3px 0 0 var(--yellow)}
+.hero p{color:var(--muted);font-size:clamp(15px,1.8vw,17px);max-width:48ch}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.hero-badges{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap;color:#111;font-weight:700;font-size:13px}
+.hero-badges span{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--border);padding:8px 12px;border-radius:999px}
+.hero-media{
+  position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);
+  background:#111;aspect-ratio:4/3.2;isolation:isolate;
+}
+.hero-media img{width:100%;height:100%;object-fit:cover}
+.hero-float{
+  position:absolute;left:14px;right:14px;bottom:14px;display:flex;gap:10px;flex-wrap:wrap;
+}
+.float-card{
+  background:rgba(255,255,255,.96);backdrop-filter:blur(6px);
+  border-radius:16px;padding:10px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 20px rgba(0,0,0,.12)
+}
+.float-card img{width:44px;height:44px;border-radius:10px;object-fit:cover}
+.float-card b{font-size:13px;line-height:1.1;display:block}
+.float-card small{font-size:11px;color:var(--muted);font-weight:600}
+
+/* SECTIONS */
+.section{padding:64px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:26px;flex-wrap:wrap}
+.section-head h2{font-family:'Bebas Neue';font-size:44px;line-height:1;letter-spacing:.6px}
+.section-head h2 em{font-style:normal;color:var(--red)}
+.section-head p{color:var(--muted);max-width:42ch;font-size:14.5px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:#fff;font-weight:700;font-size:13px}
+.chip.active{background:var(--black);color:#fff;border-color:var(--black)}
+
+/* MENU */
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:#fff;border:1px solid var(--border);border-radius:20px;overflow:hidden;
+  display:flex;flex-direction:column;transition:.2s;position:relative;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card-img{position:relative;aspect-ratio:1.25/1;background:var(--gray);overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.45s}
+.card:hover .card-img img{transform:scale(1.06)}
+.price-tag{
+  position:absolute;top:12px;left:12px;background:var(--yellow);color:#111;
+  padding:7px 10px;border-radius:999px;font-weight:900;font-size:13px;letter-spacing:.02em;box-shadow:0 6px 14px rgba(0,0,0,.12)
+}
+.badge-new{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;padding:6px 9px;border-radius:999px;font-weight:800;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.card-body{padding:16px 16px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-title{font-weight:800;font-size:17px;line-height:1.2}
+.card-desc{color:var(--muted);font-size:13px;line-height:1.5;min-height:38px}
+.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.btn-paypal{
+  background:#ffc439;color:#111;border:1px solid #ffb700;font-weight:800;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:11px 10px;font-size:13px
+}
+.btn-paypal:hover{filter:brightness(.98)}
+.btn-wa{
+  grid-column:1 / -1;
+  background:#fff;border:1px dashed #c8f0c8;color:#128c4a;
+  padding:10px;border-radius:999px;font-weight:700;font-size:13px;display:inline-flex;justify-content:center;align-items:center;gap:6px
+}
+.btn-wa:hover{background:#f0faf0}
+
+/* DEALS */
+.deals-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.deal-big{
+  background:var(--black);color:#fff;border-radius:24px;padding:28px;position:relative;overflow:hidden;min-height:360px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.deal-big::after{
+  content:"";position:absolute;right:-40px;bottom:-40px;width:320px;height:320px;
+  background:radial-gradient(circle at center, var(--red) 0 40%, transparent 41%), radial-gradient(circle at center, var(--yellow) 0 26%, transparent 27%);
+  opacity:.9;pointer-events:none;
+}
+.deal-big h3{font-family:'Bebas Neue';font-size:56px;line-height:.9;letter-spacing:.8px;max-width:9ch}
+.deal-big h3 span{color:var(--yellow)}
+.deal-stack{display:flex;flex-direction:column;gap:18px}
+.deal-card{border:1px solid var(--border);border-radius:20px;padding:18px;display:flex;gap:14px;align-items:center;background:#fff}
+.deal-card img{width:84px;height:84px;border-radius:14px;object-fit:cover}
+
+/* FOOTER */
+.footer{background:#0f0f0f;color:#cfd2d6;padding:28px 0 0;border-top:4px solid var(--yellow)}
+.footer-grid{display:grid;grid-template-columns:1.4fr .9fr 1.1fr;gap:22px;padding:26px 0 18px}
+.footer h4{color:#fff;font-weight:800;margin-bottom:10px;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.footer a{color:#a8adb3;font-size:14px}.footer a:hover{color:#fff}
+.map-wrap{border-radius:16px;overflow:hidden;border:1px solid #232323;background:#161616}
+.map-wrap iframe{width:100%;height:220px;border:0;display:block;filter:grayscale(.1) contrast(1.05)}
+.copy{border-top:1px solid #1e1e1e;padding:14px 0;color:#7a8088;font-size:12.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* CART DRAWER */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.25s;z-index:80}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(420px,92vw);background:#fff;z-index:90;
+  transform:translateX(100%);transition:.32s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;
+  box-shadow:-20px 0 60px rgba(0,0,0,.18)
+}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:18px;border-bottom:1px solid var(--border)}
+.drawer-body{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:12px}
+.empty{padding:30px 14px;text-align:center;color:var(--muted)}
+.cart-item{display:flex;gap:12px;padding:12px;border:1px solid var(--border);border-radius:14px}
+.cart-item img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--border);border-radius:999px;overflow:hidden;margin-top:8px}
+.qty button{width:28px;height:28px;display:grid;place-items:center;font-weight:800}
+.qty span{min-width:26px;text-align:center;font-weight:700;font-size:13px}
+.drawer-foot{border-top:1px solid var(--border);padding:16px;background:#fbfbfb;display:grid;gap:12px}
+.totals{display:grid;gap:6px;font-size:14px}
+.totals div{display:flex;justify-content:space-between}
+.totals b{font-size:16px}
+
+/* TOAST */
+.toast{
+  position:fixed;left:50%;bottom:18px;transform:translate(-50%,120%);z-index:100;
+  background:#111;color:#fff;padding:12px 16px;border-radius:999px;font-weight:700;font-size:13px;transition:.35s;box-shadow:0 12px 30px rgba(0,0,0,.22)
+}
+.toast.show{transform:translate(-50%,0)}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .menu-grid{grid-template-columns:repeat(2,1fr)}
+  .deals-wrap{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .hamburger{display:grid}
+}
+@media(max-width:620px){
+  .nav{height:64px}
+  .menu-grid{grid-template-columns:1fr}
+  .section{padding:44px 0}
+  .hero h1{font-size:54px}
+  .card-desc{min-height:auto}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-media{aspect-ratio:1.1/1}
+}
+.mobile-menu{
+  position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);z-index:40;
+  padding:12px 4%;display:none;flex-direction:column;gap:8px
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:12px 12px;border-radius:12px;font-weight:700;border:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#top" aria-label="Delicious Meal USA home">
+      <span class="logo-mark">DM</span>
+      <span>DELICIOUS <b>MEAL</b> USA</span>
+    </a>
+    <nav class="nav-links" aria-label="primary">
+      <a href="#menu">Menu</a>
+      <a href="#deals">Deals</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn" id="openCartBtn" aria-label="Open cart">Cart <span class="cart-count" id="cartCount">0</span></button>
+      <button class="btn btn-yellow btn-sm" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Order Now</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#menu" onclick="closeMobile()">Menu</a>
+    <a href="#deals" onclick="closeMobile()">Deals</a>
+    <a href="#location" onclick="closeMobile()">Location</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">🔥 Houston’s #1 Fast Food • Since 2012</span>
+      <h1>CRISPY <i>BURGERS</i><br>LOADED &<br>JUICY GOOD</h1>
+      <p>Fresh smash burgers, crinkle fries, hand-spun shakes. Order in seconds, pay with PayPal or WhatsApp us directly. Delivery in 25-35 min across Houston.</p>
+      <div class="hero-ctas">
+        <a href="#menu" class="btn btn-red">Order Now — From $5.49</a>
+        <a href="https://wa.me/17135550199?text=Hi%20Delicious%20Meal%20USA%21%20I%20want%20to%20order%20now." target="_blank" rel="noopener" class="btn btn-outline">💬 WhatsApp Order</a>
+      </div>
+      <div class="hero-badges">
+        <span>⭐ 4.8 (2,341 reviews)</span>
+        <span>🚚 Free delivery over $25</span>
+        <span>🕒 Open 10AM - 11PM</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=600&q=80&auto=format&fit=crop" alt="Delicious burger hero" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80&auto=format&fit=crop'">
+      <div class="hero-float">
+        <div class="float-card">
+          <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=200&q=80&auto=format&fit=crop" alt="">
+          <div><b>Double Smash $11.49</b><small>Most ordered today</small></div>
+        </div>
+        <div class="float-card">
+          <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=200&q=80&auto=format&fit=crop" alt="">
+          <div><b>Golden Fries $5.49</b><small>Crispy & salted</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>OUR <em>SIGNATURE</em> MENU</h2>
+        <p>USD prices • Cooked to order • 100% Angus beef. Tap Add to Cart or instant PayPal Buy Now.</p>
+      </div>
+      <div class="filters" role="tablist">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="burger">Burgers</button>
+        <button class="chip" data-filter="sides">Sides</button>
+        <button class="chip" data-filter="drinks">Shakes</button>
+      </div>
+    </div>
+
+    <div class="menu-grid" id="menuGrid">
+      <!-- 1 -->
+      <article class="card" data-cat="burger" data-id="1" data-name="Classic Smash Burger" data-price="8.99">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=600&q=80&auto=format&fit=crop" alt="Classic Smash Burger" loading="lazy">
+          <span class="price-tag">$8.99</span><span class="badge-new">Bestseller</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Classic Smash Burger</h3>
+          <p class="card-desc">Double thin patties, American cheese, pickles, onions, house sauce on potato bun.</p>
+          <div class="card-actions">
+            <button class="btn btn-black btn-sm addBtn">Add to Cart</button>
+            <a class="btn-paypal" href="https://www.paypal.me/deliciousmealusa/8.99" target="_blank" rel="noopener">PayPal Buy Now</a>
+            <button class="btn-wa waBtn">💬 WhatsApp this item</button>
+          </div>
+        </div>
+      </article>
+      <!-- 2 -->
+      <article class="card" data-cat="burger" data-id="2" data-name="BBQ Bacon Double" data-price="12.99">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80&auto=format&fit=crop" alt="BBQ Bacon Double" loading="lazy">
+          <span class="price-tag">$12.99</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">BBQ Bacon Double</h3>
+          <p class="card-desc">Applewood bacon, cheddar, crispy onion rings, smoky BBQ glaze. Heavy hitter.</p>
+          <div class="card-actions">
+            <button class="btn btn-black btn-sm addBtn">Add to Cart</button>
+            <a class="btn-paypal" href="https://www.paypal.me/deliciousmealusa/12.99" target="_blank" rel="noopener">PayPal Buy Now</a>
+            <button class="btn-wa waBtn">💬 WhatsApp this item</button>
+          </div>
+        </div>
+      </article>
+      <!-- 3 -->
+      <article class="card" data-cat="sides" data-id="3" data-name="Golden Crinkle Fries" data-price="5.49">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1585109649139-366815a0d713?w=600&q=80&auto=format&fit=crop" alt="Golden Crinkle Fries" loading="lazy">
+          <span class="price-tag">$5.49</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Golden Crinkle Fries</h3>
+          <p class="card-desc">Extra crispy, sea salt, served with house-made fry sauce. Vegan friendly.</p>
+          <div class="card-actions">
+            <button class="btn btn-black btn-sm addBtn">Add to Cart</button>
+            <a class="btn-paypal" href="https://www.paypal.me/deliciousmealusa/5.49" target="_blank" rel="noopener">PayPal Buy Now</a>
+            <button class="btn-wa waBtn">💬 WhatsApp this item</button>
+          </div>
+        </div>
+      </article>
+      <!-- 4 -->
+      <article class="card" data-cat="burger" data-id="4" data-name="Spicy Jalapeño Crunch" data-price="10.99">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80&auto=format&fit=crop" alt="Spicy Jalapeno Crunch" loading="lazy">
+          <span class="price-tag">$10.99</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Spicy Jalapeño Crunch</h3>
+          <p class="card-desc">Pepper jack, pickled jalapeños, hot honey, lettuce & crushed tortilla crunch.</p>
+          <div class="card-actions">
+            <button class="btn btn-black btn-sm addBtn">Add to Cart</button>
+            <a class="btn-paypal" href="https://www.paypal.me/deliciousmealusa/10.99" target="_blank" rel="noopener">PayPal Buy Now</a>
+            <button class="btn-wa waBtn">💬 WhatsApp this item</button>
+          </div>
+        </div>
+      </article>
+      <!-- 5 -->
+      <article class="card" data-cat="sides" data-id="5" data-name="Loaded Cheese Tots" data-price="7.49">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=600&q=80&auto=format&fit=crop" alt="Loaded Cheese Tots" loading="lazy">
+          <span class="price-tag">$7.49</span><span class="badge-new">New</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Loaded Cheese Tots</h3>
+          <p class="card-desc">Tater tots smothered in cheese sauce, bacon bits, chives & sour cream drizzle.</p>
+          <div class="card-actions">
+            <button class="btn btn-black btn-sm addBtn">Add to Cart</button>
+            <a class="btn-paypal" href="https://www.paypal.me/deliciousmealusa/7.49" target="_blank" rel="noopener">PayPal Buy Now</a>
+            <button class="btn-wa waBtn">💬 WhatsApp this item</button>
+          </div>
+        </div>
+      </article>
+      <!-- 6 -->
+      <article class="card" data-cat="drinks" data-id="6" data-name="Vanilla Cookie Shake" data-price="6.99">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&q=80&auto=format&fit=crop" alt="Vanilla Cookie Shake" loading="lazy">
+          <span class="price-tag">$6.99</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Vanilla Cookie Shake</h3>
+          <p class="card-desc">Hand-spun vanilla, cookie crumbles, whipped cream. 16oz cup of happiness.</p>
+          <div class="card-actions">
+            <button class="btn btn-black btn-sm addBtn">Add to Cart</button>
+            <a class="btn-paypal" href="https://www.paypal.me/deliciousmealusa/6.99" target="_blank" rel="noopener">PayPal Buy Now</a>
+            <button class="btn-wa waBtn">💬 WhatsApp this item</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="deals" style="background:#fffdf0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container deals-wrap">
+    <div class="deal-big">
+      <div style="position:relative;z-index:1">
+        <span style="background:var(--yellow);color:#111;padding:6px 10px;border-radius:999px;font-weight:900;font-size:12px;letter-spacing:.06em">LIMITED TIME</span>
+        <h3 style="margin-top:14px">FAMILY FEAST <span>FOR 4</span> $29.99</h3>
+        <p style="color:#b9bdc2;margin-top:10px;max-width:34ch;font-size:14px">4 Smash Burgers + Large Fries + 4 Shakes + 8pc Tots. Save $14.</p>
+      </div>
+      <div style="position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn-yellow" onclick="addDeal()">Add Deal to Cart</button>
+        <a class="btn" style="background:#fff;color:#111" href="https://www.paypal.me/deliciousmealusa/29.99" target="_blank" rel="noopener">PayPal $29.99</a>
+      </div>
+    <div class="deal-stack">
+      <div class="deal-card">
+        <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=600&q=80&auto=format&fit=crop" alt="">
+        <div><b style="display:block">Weekday Lunch $9.99</b><small style="color:var(--muted)">Any burger + fries + drink. Mon-Fri 11am-3pm.</small><div style="margin-top:8px"><a class="btn btn-black btn-sm" href="#menu">Grab Lunch</a></div></div>
+      </div>
+      <div class="deal-card">
+        <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=80&auto=format&fit=crop" alt="">
+        <div><b style="display:block">Free Delivery $25+</b><small style="color:var(--muted)">Houston inner loop only. Auto-applied at checkout.</small><div style="margin-top:8px"><button class="btn btn-black btn-sm" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Order Now</button></div></div>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="location">
+  <div class="container">
+    <div class="section-head">
+      <div><h2>FIND <em>US</em> IN HOUSTON</h2><p>123 Main St, Houston TX 77002 • Open daily 10AM-11PM</p></div>
+      <a class="btn btn-outline btn-sm" href="https://maps.google.com/?q=123+Main+St+Houston+TX+77002" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+    <div class="map-wrap">
+      <iframe title="Houston TX Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=123%20Main%20St%20Houston%20TX%2077002&z=14&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo" style="margin-bottom:12px"><span class="logo-mark" style="background:var(--yellow);color:#111">DM</span><span style="color:#fff">DELICIOUS <b style="color:var(--yellow)">MEAL</b> USA</span></div>
+      <p style="font-size:14px;color:#9aa0a8;max-width:32ch">Smash burgers & crinkle fries made fresh. Serving downtown Houston with love since 2012.</p>
+      <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
+        <a class="btn btn-yellow btn-sm" href="https://wa.me/17135550199?text=Hello%20Delicious%20Meal%20USA!" target="_blank" rel="noopener">WhatsApp Order</a>
+        <a class="btn btn-sm" style="background:#1c1c1c;color:#fff;border:1px solid #2a2a2a" href="tel:+17135550199">Call (713) 555-0199</a>
+      </div>
+    </div>
+    <div>
+      <h4>Visit Us</h4>
+      <p style="font-size:14px;color:#c8ccd1;line-height:1.6"><strong style="color:#fff">123 Main St<br>Houston TX 77002</strong><br>Mon-Sun 10AM - 11PM<br>Delivery & Pickup</p>
+      <h4 style="margin-top:16px">Quick Links</h4>
+      <div style="display:grid;gap:6px"><a href="#menu">Menu</a><a href="#deals">Deals & Combos</a><a href="https://www.paypal.me/deliciousmealusa" target="_blank" rel="noopener">PayPal Checkout</a></div>
+    </div>
+    <div>
+      <h4>Pay Securely</h4>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px">
+        <span style="background:#fff;color:#003087;font-weight:900;padding:8px 12px;border-radius:8px;font-size:13px">Pay<span style="color:#009cde">Pal</span></span>
+        <span style="background:#25D366;color:#fff;font-weight:800;padding:8px 12px;border-radius:8px;font-size:13px">WhatsApp</span>
+        <span style="background:#111;color:#fff;border:1px solid #2a2a2a;padding:8px 12px;border-radius:8px;font-size:13px">Cash on Delivery</span>
+      </div>
+      <p style="font-size:13px;color:#9aa0a8">Payments placeholder uses PayPal.me links. Replace with your live PayPal Business email or PayPal Buttons SDK client-id for production.</p>
+      <div id="paypal-button-container" style="margin-top:12px;background:#fff;border-radius:12px;padding:10px;color:#111;font-size:13px;font-weight:700;text-align:center;border:1px dashed #ddd">PayPal Buttons SDK placeholder<br><small style="color:var(--muted);font-weight:500">Add &lt;script src="https://www.paypal.com/sdk/js?client-id=YOUR_ID"&gt; to enable smart buttons.</small></div>
+    </div>
+  </div>
+  <div class="container copy"><span>© <span id="year"></span> Delicious Meal USA • 123 Main St Houston TX 77002</span><span>Made with ❤️ in Houston • Prices in USD</span></div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <strong style="font-size:16px">Your Cart • <span id="cartSubCount">0 items</span></strong>
+    <button class="btn btn-outline btn-sm" id="closeCartBtn">Close</button>
+  </div>
+  <div class="drawer-body" id="cartBody">
+    <div class="empty" id="emptyMsg">Your cart is empty.<br><small>Add some tasty items from the menu.</small></div>
+  </div>
+  <div class="drawer-foot">
+    <div class="totals">
+      <div><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+      <div><span>Delivery</span><span id="delivery">Calculated at checkout</span></div>
+      <div><b>Total</b><b id="total">$0.00</b></div>
+    </div>
+    <a id="paypalCheckoutBtn" class="btn-paypal" style="text-align:center;padding:13px" href="https://www.paypal.me/deliciousmealusa/1" target="_blank" rel="noopener">Pay with PayPal</a>
+    <button class="btn btn-black" id="whatsappCheckoutBtn">Order on WhatsApp 💬</button>
+    <small style="color:var(--muted);text-align:center;font-size:11.5px;line-height:1.4">WhatsApp message will be auto-built with your cart items & total. Edit before sending.</small>
+  </div>
+</aside>
+
+<div class="toast" id="toast">Added to cart</div>
+
+<script>
+const WHATSAPP_NUMBER = "17135550199";
+const STORE_ADDRESS = "123 Main St, Houston TX 77002";
+const cart = new Map();
+const $ = s=>document.querySelector(s);
+const $$ = s=>document.querySelectorAll(s);
+
+function money(n){ return "$"+Number(n).toFixed(2); }
+function updateCartUI(){
+  const body = $("#cartBody");
+  const count = [...cart.values()].reduce((a,c)=>a+c.qty,0);
+  const subtotal = [...cart.values()].reduce((a,c)=>a+c.qty*c.price,0);
+  $("#cartCount").textContent = count;
+  $("#cartSubCount").textContent = count+" "+(count===1?"item":"items");
+  $("#subtotal").textContent = money(subtotal);
+  $("#total").textContent = money(subtotal);
+  const delivery = $("#delivery");
+  delivery.textContent = subtotal>=25 ? "FREE over $25 🎉" : "$3.99 (FREE over $25)";
+  const paypalBtn = $("#paypalCheckoutBtn");
+  paypalBtn.href = "https://www.paypal.me/deliciousmealusa/"+(subtotal>0?subtotal.toFixed(2):"1");
+
+  body.querySelectorAll(".cart-item").forEach(el=>el.remove());
+  const empty = $("#emptyMsg");
+  if(count===0){ empty.style.display="block"; return; }
+  empty.style.display="none";
+  for(const item of cart.values()){
+    const row = document.createElement("div");
+    row.className="cart-item";
+    row.innerHTML = `
+      <img src="${item.img}" alt="">
+      <div style="flex:1">
+        <b style="font-size:13px;display:block;line-height:1.2">${item.name}</b>
+        <small style="color:var(--muted)">${money(item.price)} each</small>
+        <div class="qty">
+          <button aria-label="minus" data-act="dec">−</button>
+          <span>${item.qty}</span>
+          <button aria-label="plus" data-act="inc">+</button>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <b style="font-size:13px">${money(item.qty*item.price)}</b><br>
+        <button style="font-size:11px;color:var(--red);font-weight:700;margin-top:6px" data-act="rm">Remove</button>
+      </div>`;
+    row.querySelectorAll("button").forEach(b=>{
+      b.addEventListener("click",()=>{
+        const act=b.dataset.act;
+        if(act==="inc"){ item.qty++; updateCartUI(); }
+        if(act==="dec"){ item.qty=Math.max(1,item.qty-1); updateCartUI(); }
+        if(act==="rm"){ cart.delete(item.id); updateCartUI(); showToast("Removed from cart"); }
+      });
+    });
+    body.appendChild(row);
+  }
+}
+function addToCart(data){
+  const id=String(data.id);
+  const existing=cart.get(id);
+  if(existing) existing.qty++;
+  else cart.set(id,{...data,qty:1});
+  updateCartUI(); openCart(); showToast(data.name+" added");
+}
+function buildWhatsAppMessage(singleItem){
+  let items=[];
+  let total=0;
+  if(singleItem){
+    items=[singleItem]; total=singleItem.price;
+  }else{
+    items=[...cart.values()]; total=items.reduce((a,c)=>a+c.qty*c.price,0);
+    if(items.length===0) return null;
+  }
+  let lines=[];
+  lines.push("Hi Delicious Meal USA! I want to order:");
+  lines.push("");
+  items.forEach(it=>{
+    if(it.qty) lines.push(`• ${it.name} x${it.qty} = ${money(it.qty*it.price)}`);
+    else lines.push(`• ${it.name} = ${money(it.price)}`);
+  });
+  lines.push("");
+  lines.push(`Subtotal: ${money(total)}`);
+  lines.push(`Address: ${STORE_ADDRESS}`);
+  lines.push(`Delivery: ${total>=25?"FREE":"$3.99"}`);
+  lines.push("");
+  lines.push("Please confirm my order. Thank you!");
+  return encodeURIComponent(lines.join("\n"));
+}
+
+function openCart(){ $("#drawer").classList.add("open"); $("#overlay").classList.add("open"); }
+function closeCart(){ $("#drawer").classList.remove("open"); $("#overlay").classList.remove("open"); }
+function showToast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),2200); }
+function closeMobile(){ $("#mobileMenu").classList.remove("open"); }
+
+document.addEventListener("DOMContentLoaded",()=>{
+  $("#year").textContent=new Date().getFullYear();
+  $$(".card").forEach(card=>{
+    const id=card.dataset.id, name=card.dataset.name, price=parseFloat(card.dataset.price);
+    const img=card.querySelector("img").src;
+    card.querySelector(".addBtn").addEventListener("click",()=>addToCart({id,name,price,img}));
+    card.querySelector(".waBtn").addEventListener("click",()=>{
+      const msg=buildWhatsAppMessage({name,price});
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank");
+    });
+  });
+  $("#openCartBtn").addEventListener("click",openCart);
+  $("#closeCartBtn").addEventListener("click",closeCart);
+  $("#overlay").addEventListener("click",()=>{ closeCart(); closeMobile(); });
+  $("#hamburgerBtn").addEventListener("click",()=>$("#mobileMenu").classList.toggle("open"));
+  $("#whatsappCheckoutBtn").addEventListener("click",()=>{
+    const msg=buildWhatsAppMessage();
+    if(!msg){ showToast("Cart is empty"); return; }
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`,"_blank");
+  });
+  $$(".chip").forEach(chip=>{
+    chip.addEventListener("click",()=>{
+      $$(".chip").forEach(c=>c.classList.remove("active")); chip.classList.add("active");
+      const f=chip.dataset.filter;
+      $$(".card").forEach(card=>{
+        const cat=card.dataset.cat;
+        card.style.display = (f==="all"||cat===f) ? "" : "none";
+      });
+    });
+  });
+});
+function addDeal(){
+  addToCart({id:"deal-family",name:"Family Feast for 4",price:29.99,img:"https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=600&q=80&auto=format&fit=crop"});
+}
+// PayPal Buttons placeholder (uncomment and add client-id when ready)
+/*
+paypal.Buttons({
+  createOrder:(data,actions)=>actions.order.create({purchase_units:[{amount:{value: document.getElementById('total').textContent.replace('$','')||'1.00', currency_code:'USD'}}]}),
+  onApprove:(data,actions)=>actions.order.capture().then(()=>showToast("Payment successful!"))
+}).render('#paypal-button-container');
+*/
+</script>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;var a=target.closest?target.closest("a[href]"):null;if(!a||!a.href||!/^https?:\/\//.test(a.href))return;if(a.href.replace(/#.*$/,"")===loc)return;var productId=extractProductId(target)||extractProductId(a);if(!productId)return;e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*")},true)})();</script></body>
+</html>
