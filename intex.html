@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dis cyd | Brewed with Soul</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f0d0a;--cream:#f5efe6;--brown:#2b1d14;--accent:#d97941;--muted:#a89a8c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--cream);line-height:1.6}
+h1,h2,h3{font-family:'Cormorant Garamond',serif}
+nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:20px 6%;background:rgba(15,13,10,0.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(245,239,230,0.08)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:28px;letter-spacing:3px;font-weight:700}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--cream);text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.7;transition:.3s}
+.nav-links a:hover{opacity:1;color:var(--accent)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;padding:100px 6% 60px;gap:40px}
+.hero-text h1{font-size:clamp(56px,9vw,120px);line-height:0.9;letter-spacing:-1px}
+.hero-text h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.hero-text p{margin:24px 0 32px;max-width:420px;color:var(--muted);font-size:17px;font-weight:300}
+.btn{display:inline-block;padding:14px 32px;border:1px solid var(--accent);color:var(--cream);text-decoration:none;letter-spacing:2px;text-transform:uppercase;font-size:12px;transition:.3s}
+.btn:hover{background:var(--accent);color:#000}
+.btn-fill{background:var(--accent);color:#000}
+.hero-img{position:relative;height:75vh;border-radius:18px;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.9)}
+.badge{position:absolute;bottom:20px;left:20px;background:var(--cream);color:#000;padding:12px 18px;border-radius:100px;font-size:12px;letter-spacing:1px}
+section{padding:90px 6%}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:48px;flex-wrap:wrap;gap:20px}
+.section-head h2{font-size:52px}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.menu-card{background:#1a1511;border:1px solid rgba(245,239,230,0.07);padding:28px;border-radius:16px;transition:.3s}
+.menu-card:hover{transform:translateY(-4px);border-color:rgba(217,121,65,0.3)}
+.menu-card h3{font-size:22px;margin-bottom:6px}
+.menu-card .desc{color:var(--muted);font-size:13px;margin-bottom:16px;min-height:36px}
+.price{color:var(--accent);font-weight:600;letter-spacing:1px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;background:var(--cream);color:#1a1511;border-radius:24px;margin:0 2%;padding:80px 5%}
+.about h2{font-size:48px;color:#1a1511}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery img{width:100%;height:300px;object-fit:cover;border-radius:14px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+input,textarea{width:100%;background:transparent;border:1px solid rgba(245,239,230,0.15);padding:14px;color:var(--cream);border-radius:10px;margin-bottom:16px;font-family:inherit}
+footer{text-align:center;padding:40px;color:var(--muted);font-size:12px;letter-spacing:1px;border-top:1px solid rgba(245,239,230,0.08)}
+@media(max-width:900px){.hero,.about,.contact{grid-template-columns:1fr}.hero-img{height:50vh}.gallery{grid-template-columns:1fr 1fr}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo">DIS <span>CYD</span></div>
+<ul class="nav-links">
+<li><a href="#menu">Menu</a></li>
+<li><a href="#about">Our Story</a></li>
+<li><a href="#visit">Visit</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+<div class="hero-text">
+<p style="letter-spacing:4px;text-transform:uppercase;font-size:11px;color:var(--accent)">Mafikeng, North West • Est. 2026</p>
+<h1>Brewed<br>with <em>Soul.</em></h1>
+<p>Dis cyd is not just coffee. It's slow mornings, warm wood, deep conversation and the perfect crema. A boutique hideout in the heart of Mafikeng.</p>
+<a href="#menu" class="btn btn-fill">Explore Menu</a>
+<a href="#visit" class="btn" style="margin-left:10px">Find Us</a>
+</div>
+<div class="hero-img">
+<img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1000" alt="coffee shop">
+<div class="badge">OPEN DAILY 07:00 - 19:00</div>
+</div>
+</div>
+
+<section id="menu">
+<div class="section-head"><h2>The Menu</h2><p style="color:var(--muted);max-width:340px">Single-origin beans roasted weekly. Oat, almond and full-cream. All baked in-house.</p></div>
+<div class="menu-grid">
+<div class="menu-card"><h3>Dis Cyd Flat White</h3><p class="desc">Double shot, velvet milk, our signature blend</p><div class="price">R 42</div></div>
+<div class="menu-card"><h3>Black Gold Americano</h3><p class="desc">Ethiopian heirloom, black, clean finish</p><div class="price">R 36</div></div>
+<div class="menu-card"><h3>Soul Latte</h3><p class="desc">Vanilla, cinnamon, honey foam</p><div class="price">R 48</div></div>
+<div class="menu-card"><h3>Iced Cyd</h3><p class="desc">Cold brew, orange zest, tonic</p><div class="price">R 52</div></div>
+<div class="menu-card"><h3>Avocado & Poached</h3><p class="desc">Sourdough, feta, chilli flakes, two eggs</p><div class="price">R 95</div></div>
+<div class="menu-card"><h3>Babka French Toast</h3><p class="desc">Chocolate babka, mascarpone, seasonal berries</p><div class="price">R 88</div></div>
+</div>
+</section>
+
+<div class="about" id="about">
+<div><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800" style="width:100%;border-radius:18px;height:520px;object-fit:cover"></div>
+<div>
+<h2>We do slow coffee, on purpose.</h2>
+<p style="margin:20px 0;color:#5a4d41">Dis cyd started with a small roaster in a garage in Mafikeng. George wanted a place that felt like a deep breath. No rush. No laptops shouting. Just good music, honest food, and coffee that makes you pause.</p>
+<p style="color:#5a4d41">We source directly from farmers in Yirgacheffe and Nyeri. Roasted in small batches every Monday. Served with intention.</p>
+<br><a href="#" class="btn" style="border-color:#1a1511;color:#1a1511">Our Story</a>
+</div>
+</div>
+
+<section>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=600">
+<img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=600">
+<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600">
+</div>
+</section>
+
+<section id="visit" class="contact">
+<div>
+<h2 style="font-size:42px;margin-bottom:20px">Come sit with us</h2>
+<p style="color:var(--muted);margin-bottom:30px">23 Molopo Street, Mafikeng, 2745<br>Mon - Sun: 07:00 - 19:00<br><br>Bookings for 6+ recommended.<br>Dog-friendly patio. Free WiFi, but we encourage you to talk to each other.</p>
+<iframe src="https://maps.google.com/maps?q=Mafikeng&t=&z=13&ie=UTF8&iwloc=&output=embed" style="width:100%;height:220px;border:0;border-radius:14px;filter:invert(90%)"></iframe>
+</div>
+<div id="contact">
+<h3 style="font-size:28px;margin-bottom:16px">Say hi</h3>
+<input placeholder="Your name">
+<input placeholder="Email">
+<textarea rows="4" placeholder="Message"></textarea>
+<a href="#" class="btn btn-fill" style="width:100%;text-align:center">Send Message</a>
+<p style="margin-top:18px;color:var(--muted);font-size:13px">Follow: @dis.cyd • hello@discyd.co.za</p>
+</div>
+</section>
+
+<footer>© 2026 DIS CYD COFFEE CO. MAFIKENG, SA — BREWED WITH SOUL</footer>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;var a=target.closest?target.closest("a[href]"):null;if(!a||!a.href||!/^https?:\/\//.test(a.href))return;if(a.href.replace(/#.*$/,"")===loc)return;var productId=extractProductId(target)||extractProductId(a);if(!productId)return;e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*")},true)})();</script></body>
+</html>
